@@ -1,4 +1,6 @@
 Rails.application.configure do
+  root 'pages#index'
+  get 'pages/show'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -11,6 +13,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
